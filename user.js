@@ -15,7 +15,7 @@ function logout(){
 function updateStatusSubmit(){	
 	var newStatus;
 	try{
-		newStatus=$("#statusText").val();
+		newStatus=$("#statusText").val().trim();
 	}catch(e){
 	}
 	if(newStatus.length==0){	
