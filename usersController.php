@@ -52,7 +52,7 @@ class usersController extends AppController
 			$this->loadModel('User');		
 			$condition="SELECT status, postTime FROM users WHERE users.username='".$this->Session->read('online_username')."'";
 			$oldStatusTime=$this->User->query($condition);
-			$oldStatus=$oldStatusTime[0]['users']['status'];			
+			$oldStatus=trim($oldStatusTime[0]['users']['status']);			
 			$newLength=strlen($newStatus);			
 			$oldLength=strlen($oldStatus);
 			$lengthMin=min($newLength,$oldLength);
